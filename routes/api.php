@@ -16,3 +16,9 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/noticias', 'ArticlesController@getAll');
+Route::get('/ultimas-noticias', 'ArticlesController@getUltimasNoticias');
+Route::get('/noticias-destacadas', 'ArticlesController@getNoticiasDestacadas');
+// Route::get('/noticias/{id}', 'ArticlesController@getById');
+Route::get('/noticias/{slug}', 'ArticlesController@getBySlug');
